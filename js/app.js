@@ -42,13 +42,16 @@ function optionRender(page) {
       uniqueKeywords.push(image.keyword);
     }
   });
+  uniqueKeywords.sort((a,b) => {
+    if(a < b) {return -1;}
+    else if (b > a) {return 1;}
+    else {return 0;}
+  });
   //for each unique keyword, generate a new option tag and append to drop down menu
   uniqueKeywords.forEach(keyObj => {
     let optionTag = `<option value=${keyObj}>${keyObj}</option>`;
     $('select').append(optionTag);
   });
-  //add event listener to select tag on 'change'
-  $('select').on('change', clickHandler);
 }
 
 //show or hide sections depend on keyword in dropdown menu
@@ -66,6 +69,7 @@ function pageSwap(event){
   const pageId = event.target.id;
   let pageArr = (pageId === 'page1') ? allHorns1 : allHorns2;
   let optNum = (pageId === 'page1') ? 1 : 2;
+  isPage1 = (pageId === 'page1') ? true : false;
   //remove content in main
   $('main').empty();
 
@@ -76,22 +80,22 @@ function pageSwap(event){
   optionRender(optNum);
 }
 
-function fetchData(page){
-  let dataURL;
-  let pageArr;
-  //define variable values based on page1 or page2
-  if(page === 'page1') {
-    dataURL = 'data/page-1.json';
-    pageArr = 1;
-  } else if(page === 'page2'){
-    dataURL = 'data/page-2.json';
-    pageArr = 2;
-  }
-
+function fetchData(){
   //instantiate new Horn based on given variable values
-  $.get(dataURL, data => {
+  $.get('data/page-1.json', data => {
     data.forEach(horn => {
-      new Horn(horn, pageArr);
+      new Horn(horn, 1);
+    });
+    //initiate all event handlers
+    $('#page1').on('click', pageSwap).trigger('click');
+    $('#page2').on('click', pageSwap);
+    $('#sortTitle').on('click', sortArr);
+    $('#sortHorn').on('click', sortArr);
+    $('select').on('change', clickHandler);
+  });
+  $.get('data/page-2.json', data => {
+    data.forEach(horn => {
+      new Horn(horn, 2);
     });
   });
 }
@@ -123,12 +127,6 @@ function sortArr(event){
 
 $(function() {
   //instantiate Horn objects and store them in separate arrays
-  fetchData('page1');
-  fetchData('page2');
-
-  $('#page1').on('click', pageSwap).trigger('click');
-  $('#page2').on('click', pageSwap);
-  $('#sortTitle').on('click', sortArr);
-  $('#sortHorn').on('click', sortArr);
+  fetchData();
 });
 
