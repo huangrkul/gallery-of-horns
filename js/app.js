@@ -42,6 +42,7 @@ function optionRender(page) {
       uniqueKeywords.push(image.keyword);
     }
   });
+  //sort keywords alphabetically in drop down menu
   uniqueKeywords.sort((a,b) => {
     if(a < b) {return -1;}
     else if (b > a) {return 1;}
@@ -65,6 +66,7 @@ function clickHandler(event){
   }
 }
 
+//page1 and page2 button handler
 function pageSwap(event){
   const pageId = event.target.id;
   let pageArr = (pageId === 'page1') ? allHorns1 : allHorns2;
@@ -86,17 +88,17 @@ function fetchData(){
     data.forEach(horn => {
       new Horn(horn, 1);
     });
+  });
+  $.get('data/page-2.json', data => {
+    data.forEach(horn => {
+      new Horn(horn, 2);
+    });
     //initiate all event handlers
     $('#page1').on('click', pageSwap).trigger('click');
     $('#page2').on('click', pageSwap);
     $('#sortTitle').on('click', sortArr);
     $('#sortHorn').on('click', sortArr);
     $('select').on('change', clickHandler);
-  });
-  $.get('data/page-2.json', data => {
-    data.forEach(horn => {
-      new Horn(horn, 2);
-    });
   });
 }
 
