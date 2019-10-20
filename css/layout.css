@@ -1,0 +1,40 @@
+header {
+  text-align: center;
+  width: 90%;
+  margin: 1em auto 2em auto;
+}
+
+header > ul {
+  margin: 2em auto 0 auto;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+main > section {
+  margin: 1em;
+  flex: 0 0 30%;
+  max-width: 250px;
+  background-color: #bc4c34;
+  border: 1em solid #bc4c34;
+  border-radius: 1em;
+}
+
+footer {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  text-align: center;
+}

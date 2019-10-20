@@ -1,2 +1,12 @@
 @import 'layout.css';
 @import 'modules.css';
+
+body {
+  background-color: #f8eacf;
+  font-family: 'Asap', sans-serif;
+}
+
+.title {
+  font-family: 'Squada One', cursive;
+}
+
