@@ -88,3 +88,12 @@ Start time: 11:00am
 Finish time: 1:00pm
 
 Actual time needed to complete: 2 hours
+
+## Solo Version
+
+**solo1 branch**
+- Renamed repo to gallery-of-horns
+- Split fetchData() into pageSwap() and fetchData() to fix duplication bug
+- Added comments app.js
+- Moved event handlers into fetchData() so they aren't called over and over again.
+- Applied tenary operator to wherever applicable.
