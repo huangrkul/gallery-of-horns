@@ -6,25 +6,32 @@
     <title>The Gallery of Horns</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Asap|Squada+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/base.css">
     <script id="horn-template" type="text/x-handlebars-template">
       <section class={{keyword}}>
-        <h2>{{title}}</h2>
-        <img src={{image_url}}>
-        <p>{{description}}</p>
+        <div class="obj-content">
+          <h2 class="title">{{title}}</h2>
+          <a href={{image_url}} target="_blank"><div class="image-box" style="background-image: url({{image_url}})"></div></a>
+          <!-- <img src={{image_url}}> -->
+          <p>{{description}}</p>
+        </div>
       </section>
     </script>
   </head>
   <body>
     <header>
-      <h1>The Gallery of Horns</h1>
-      <button id="page1">Page 1</button>
-      <button id="page2">Page 2</button>
-      <button id="sortTitle"">sort by Title </button>
-      <button id="sortHorn">sort by Horns</button>
-      <select>
-        <option value="default">Show All</option>
-      </select>
+      <h1 class="title">THE GALLERY OF HORNS</h1>
+      <ul>
+        <li><button id="page1">PAGE 1</button></li>
+        <li><button id="page2">PAGE 2</button></li>
+        <li></li>
+        <li><button id="sortTitle"">SORT (Title) </button></li>
+        <li><button id="sortHorn">SORT (Horn)</button></li>
+        <li><select>
+          <option value="default">Show All</option>
+        </select></li>
+      </ul>
     </header>
     <main>
     </main>

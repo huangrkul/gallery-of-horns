@@ -97,3 +97,6 @@ Actual time needed to complete: 2 hours
 - Added comments app.js
 - Moved event handlers into fetchData() so they aren't called over and over again.
 - Applied tenary operator to wherever applicable.
+
+**solo2 branch**
+- Added CSS rules to elements

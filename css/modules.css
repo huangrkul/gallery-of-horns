@@ -1,0 +1,63 @@
+header > h1 {
+  font-size: 4em;
+}
+
+header > ul li {
+  margin: 1em;
+}
+
+header > ul li:first-child, header > ul li:nth-child(2) {
+  flex: 0 0 12%;
+}
+
+header > ul li:nth-child(3) {
+  flex: 0 0 20%;
+}
+
+header > ul li:nth-child(n+4) {
+  flex: 0 0 12%;
+}
+
+header > ul li button:first-child, header> ul li button:nth-child(2) {
+  padding: 0 2em 0 2em;
+}
+
+header > ul li button, header > ul li select {
+  font-family: 'Squada One', cursive;
+  font-size: 1vw;
+  color: white;
+  border-radius: 1.2em;
+  border: 1em solid #de9610;
+  background-color: #de9610;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+header > ul li button:hover {
+  border: 1em solid #e5ab40;
+  background-color: #e5ab40;
+}
+
+
+main > section h2 {
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  color: #f8eacf;
+}
+
+main > section p {
+  width: 80%;
+  margin: 1em auto 1em auto;
+}
+
+.image-box {
+  width: 200px;
+  height: 135px;
+  background-position: center;
+  background-size: 250px;
+  background-repeat: no-repeat;
+  margin: auto;
+  border: 0.5em solid #d08271;
+  border-radius: 1em;
+}
+
