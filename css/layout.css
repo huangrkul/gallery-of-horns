@@ -9,10 +9,9 @@ header > ul {
   width: 80%;
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: center;
-  align-items: center; */
+  /* justify-content: center;*/
+  align-items: center;
 }
-
 
 
 main {
