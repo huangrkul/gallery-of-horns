@@ -86,15 +86,17 @@ function fetchData(){
   //instantiate new Horn based on given variable values
   $.get('data/page-1.json', data => {
     data.forEach(horn => {
-      new Horn(horn, 1);
+      let hornObj = new Horn(horn, 1).render();
+      $('main').append(hornObj);
     });
   });
   $.get('data/page-2.json', data => {
     data.forEach(horn => {
       new Horn(horn, 2);
     });
+    optionRender(1);
     //initiate all event handlers
-    $('#page1').on('click', pageSwap).trigger('click');
+    $('#page1').on('click', pageSwap);
     $('#page2').on('click', pageSwap);
     $('#sortTitle').on('click', sortArr);
     $('#sortHorn').on('click', sortArr);
